@@ -19,12 +19,12 @@ function App() {
   // const [error, setError] = useState(false);
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const BASE_URL = "http://localhost:5000/";
+  const BASE_URL = "https://url-shortner-11p3.onrender.com/";
 
   const handleShortenClick = () => {
     if (longUrl && isURL(longUrl)) {
       axios
-        .post(`/shortUrl`, {
+        .post(`${BASE_URL}shortUrl`, {
           fullUrl: longUrl,
         })
         .then(function (response) {
